@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Личный кабинет — Hoji.tech</title>
+  <meta name="description" content="Личный кабинет Hoji.tech">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="index.html" class="header__logo"><span class="logo-icon">⟨/⟩</span><span class="logo-text">Hoji<span class="accent">.Tech</span></span></a>
+      <nav class="header__nav" id="mainNav">
+        <a href="catalog.html" class="nav-link">Каталог</a>
+        <a href="about.html" class="nav-link">О нас</a>
+        <a href="contacts.html" class="nav-link">Контакты</a>
+      </nav>
+      <div class="header__actions">
+        <button class="btn-icon theme-toggle" id="themeToggle"><span class="theme-icon">◑</span></button>
+        <a href="cart.html" class="btn-icon cart-btn"><span class="cart-icon">◫</span><span class="cart-badge" id="cartBadge" style="display:none">0</span></a>
+        <a href="login.html" class="btn-icon" id="authBtn"><span>◎</span></a>
+        <button class="btn-icon burger" id="burger"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main class="profile-page">
+    <div class="container">
+      <div class="page-header">
+        <h1 class="page-title">Личный кабинет</h1>
+        <div class="breadcrumb"><a href="index.html">Главная</a> / <span>Профиль</span></div>
+      </div>
+
+      <div class="profile-layout">
+        <!-- SIDEBAR -->
+        <aside class="profile-sidebar">
+          <div class="profile-avatar" id="profileAvatar">
+            <span id="profileInitials">?</span>
+          </div>
+          <div class="profile-name" id="profileName">Загрузка...</div>
+          <div class="profile-email" id="profileEmail"></div>
+
+          <nav class="profile-nav">
+            <button class="profile-nav__item active" data-tab="info">
+              <span>◎</span> Мои данные
+            </button>
+            <button class="profile-nav__item" data-tab="orders">
+              <span>◫</span> История заказов
+            </button>
+            <button class="profile-nav__item danger" id="logoutBtn">
+              <span>⇥</span> Выйти
+            </button>
+          </nav>
+        </aside>
+
+        <!-- CONTENT -->
+        <div class="profile-content">
+          <!-- INFO TAB -->
+          <div class="profile-tab active" id="tab-info">
+            <h2>Мои данные</h2>
+            <form class="profile-form" id="profileForm" novalidate>
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label">Имя</label>
+                  <input type="text" id="profileFirstName" name="firstName" class="form-input" placeholder="Имя">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Фамилия</label>
+                  <input type="text" id="profileLastName" name="lastName" class="form-input" placeholder="Фамилия">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Email</label>
+                <input type="email" id="profileEmailInput" name="email" class="form-input" placeholder="Email" readonly>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Телефон</label>
+                <div class="phone-input-wrap">
+                  <span class="phone-prefix">🇰🇬 +996</span>
+                  <input type="tel" id="profilePhone" name="phone" class="form-input phone-input" placeholder="555 000 000" maxlength="9">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Адрес</label>
+                <textarea id="profileAddress" name="address" class="form-input form-textarea" placeholder="Ваш адрес" rows="2"></textarea>
+              </div>
+              <div class="form-divider">
+                <h3>Изменить пароль</h3>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Новый пароль</label>
+                <div class="password-wrap">
+                  <input type="password" id="profileNewPassword" name="newPassword" class="form-input" placeholder="Минимум 6 символов" minlength="6">
+                  <button type="button" class="password-toggle" data-target="profileNewPassword">👁</button>
+                </div>
+              </div>
+              <button type="submit" class="btn btn--primary">Сохранить изменения</button>
+            </form>
+          </div>
+
+          <!-- ORDERS TAB -->
+          <div class="profile-tab" id="tab-orders">
+            <h2>История заказов</h2>
+            <div id="ordersList"></div>
+            <div class="orders-empty" id="ordersEmpty" style="display:none">
+              <div class="empty-icon">📋</div>
+              <h3>Заказов пока нет</h3>
+              <p>Сделайте первый заказ!</p>
+              <a href="catalog.html" class="btn btn--primary">В каталог</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__bottom"><div class="container"><span>© 2025 Hoji.tech</span></div></div>
+  </footer>
+  <div class="toast-container" id="toastContainer"></div>
+  <div class="nav-overlay" id="navOverlay"></div>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

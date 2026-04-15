@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hoji.Tech — Компьютеры и ноутбуки в Кыргызстане</title>
+  <meta name="description" content="Hoji.Tech — интернет-магазин компьютеров и ноутбуков. Новые и б/у ПК, ноутбуки по лучшим ценам в Бишкеке.">
+  <meta name="keywords" content="купить компьютер, купить ноутбук, ПК Бишкек, Hoji.Tech">
+  <meta property="og:title" content="Hoji.Tech — Компьютеры и ноутбуки">
+  <meta property="og:description" content="Интернет-магазин компьютеров и ноутбуков в Кыргызстане">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://hoji.tech">
+  <meta property="og:image" content="https://hoji.tech/og-image.jpg">
+  <link rel="canonical" href="https://hoji.tech">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Store",
+    "name": "Hoji.Tech",
+    "url": "https://hoji.tech",
+    "description": "Интернет-магазин компьютеров и ноутбуков",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "ОШ",
+      "addressCountry": "KG"
+    },
+    "telephone": "+996-553-181-900"
+  }
+  </script>
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="index.html" class="header__logo">
+        <span class="logo-icon">⟨/⟩</span>
+        <span class="logo-text">Hoji<span class="accent">.Tech</span></span>
+      </a>
+      <nav class="header__nav" id="mainNav">
+        <a href="catalog.html" class="nav-link">Каталог</a>
+        <a href="about.html" class="nav-link">О нас</a>
+        <a href="contacts.html" class="nav-link">Контакты</a>
+      </nav>
+      <div class="header__actions">
+        <button class="btn-icon theme-toggle" id="themeToggle" aria-label="Переключить тему">
+          <span class="theme-icon">◑</span>
+        </button>
+        <a href="cart.html" class="btn-icon cart-btn" aria-label="Корзина">
+          <span class="cart-icon">◫</span>
+          <span class="cart-badge" id="cartBadge" style="display:none">0</span>
+        </a>
+        <a href="login.html" class="btn-icon" id="authBtn" aria-label="Войти">
+          <span>◎</span>
+        </a>
+        <button class="btn-icon burger" id="burger" aria-label="Меню">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero__bg">
+        <div class="hero__grid"></div>
+        <div class="hero__orb hero__orb--1"></div>
+        <div class="hero__orb hero__orb--2"></div>
+      </div>
+      <div class="container hero__content">
+        <div class="hero__badge">
+          <span class="pulse"></span>
+          Новые поступления
+        </div>
+        <h1 class="hero__title">
+          Техника для<br>
+          <span class="hero__title-accent">профессионалов</span>
+        </h1>
+        <p class="hero__subtitle">ПК и ноутбуки нового и б/у состояния. Лучшие цены в городе Оше.</p>
+        <div class="hero__actions">
+          <a href="catalog.html" class="btn btn--primary btn--lg">
+            Смотреть каталог
+            <span class="btn-arrow">→</span>
+          </a>
+          <a href="catalog.html?condition=used" class="btn btn--ghost btn--lg">Б/У техника</a>
+        </div>
+        <div class="hero__stats">
+          <div class="stat">
+            <span class="stat__num" data-count="500">0</span>+
+            <span class="stat__label">товаров</span>
+          </div>
+          <div class="stat">
+            <span class="stat__num" data-count="2400">0</span>+
+            <span class="stat__label">клиентов</span>
+          </div>
+          <div class="stat">
+            <span class="stat__num" data-count="5">0</span>
+            <span class="stat__label">лет на рынке</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CATEGORIES -->
+    <section class="section categories">
+      <div class="container">
+        <h2 class="section-title">Категории</h2>
+        <div class="categories__grid">
+          <a href="catalog.html?type=pc" class="category-card">
+            <div class="category-card__icon">🖥</div>
+            <h3 class="category-card__title">Настольные ПК</h3>
+            <p class="category-card__desc">Игровые, офисные, рабочие станции</p>
+            <span class="category-card__link">Смотреть →</span>
+          </a>
+          <a href="catalog.html?type=laptop" class="category-card category-card--accent">
+            <div class="category-card__icon">💻</div>
+            <h3 class="category-card__title">Ноутбуки</h3>
+            <p class="category-card__desc">Ультрабуки, игровые, бизнес</p>
+            <span class="category-card__link">Смотреть →</span>
+          </a>
+          <a href="catalog.html?condition=used" class="category-card">
+            <div class="category-card__icon">♻</div>
+            <h3 class="category-card__title">Б/У техника</h3>
+            <p class="category-card__desc">Проверенная, с гарантией</p>
+            <span class="category-card__link">Смотреть →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED PRODUCTS -->
+    <section class="section featured">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Популярные товары</h2>
+          <a href="catalog.html" class="section-link">Все товары →</a>
+        </div>
+        <div class="products-grid" id="featuredGrid">
+          <!-- Skeleton -->
+          <div class="product-card skeleton"></div>
+          <div class="product-card skeleton"></div>
+          <div class="product-card skeleton"></div>
+          <div class="product-card skeleton"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY US -->
+    <section class="section why">
+      <div class="container">
+        <h2 class="section-title">Почему Hoji.Tech?</h2>
+        <div class="why__grid">
+          <div class="why-card">
+            <div class="why-card__icon">⚡</div>
+            <h3>Быстрая доставка</h3>
+            <p>Доставка по Ош в день заказа, по Кыргызстану за 1–3 дня</p>
+          </div>
+          <div class="why-card">
+            <div class="why-card__icon">🛡</div>
+            <h3>Гарантия качества</h3>
+            <p>Все б/у товары проходят диагностику и предпродажную подготовку</p>
+          </div>
+          <div class="why-card">
+            <div class="why-card__icon">💰</div>
+            <h3>Лучшие цены</h3>
+            <p>Прямые поставки без посредников — экономия до 30%</p>
+          </div>
+          <div class="why-card">
+            <div class="why-card__icon">🔧</div>
+            <h3>Сервис и поддержка</h3>
+            <p>Собственный сервисный центр, консультации специалистов</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA BANNER -->
+    <section class="cta-banner">
+      <div class="container cta-banner__inner">
+        <div class="cta-banner__content">
+          <h2>Не нашли нужное?</h2>
+          <p>Напишите нам — подберём технику под ваши требования и бюджет</p>
+        </div>
+        <a href="contacts.html" class="btn btn--primary btn--lg">Связаться →</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="index.html" class="header__logo">
+          <span class="logo-icon">⟨/⟩</span>
+          <span class="logo-text">Hoji<span class="accent">.Tech</span></span>
+        </a>
+        <p>Компьютеры и ноутбуки<br>в Кыргызстане</p>
+      </div>
+      <div class="footer__links">
+        <div class="footer__col">
+          <h4>Магазин</h4>
+          <a href="catalog.html">Каталог</a>
+          <a href="catalog.html?type=pc">ПК</a>
+          <a href="catalog.html?type=laptop">Ноутбуки</a>
+          <a href="catalog.html?condition=used">Б/У</a>
+        </div>
+        <div class="footer__col">
+          <h4>Информация</h4>
+          <a href="about.html">О нас</a>
+          <a href="contacts.html">Контакты</a>
+          <a href="profile.html">Личный кабинет</a>
+        </div>
+        <div class="footer__col">
+          <h4>Контакты</h4>
+          <a href="tel:+996553181900">+996 553 181 900</a>
+          <a href="mailto:info@hoji.tech">info@hoji.tech</a>
+          <span>г. Ош </span>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="container">
+        <span>© 2025 Hoji.Tech. Все права защищены.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- TOAST CONTAINER -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- MOBILE NAV OVERLAY -->
+  <div class="nav-overlay" id="navOverlay"></div>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Корзина — Hoji.tech</title>
+  <meta name="description" content="Корзина покупок Hoji.tech">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="index.html" class="header__logo"><span class="logo-icon">⟨/⟩</span><span class="logo-text">Hoji<span class="accent">.Tech</span></span></a>
+      <nav class="header__nav" id="mainNav">
+        <a href="catalog.html" class="nav-link">Каталог</a>
+        <a href="about.html" class="nav-link">О нас</a>
+        <a href="contacts.html" class="nav-link">Контакты</a>
+      </nav>
+      <div class="header__actions">
+        <button class="btn-icon theme-toggle" id="themeToggle"><span class="theme-icon">◑</span></button>
+        <a href="cart.html" class="btn-icon cart-btn"><span class="cart-icon">◫</span><span class="cart-badge" id="cartBadge" style="display:none">0</span></a>
+        <a href="login.html" class="btn-icon" id="authBtn"><span>◎</span></a>
+        <button class="btn-icon burger" id="burger"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main class="cart-page">
+    <div class="container">
+      <div class="page-header">
+        <h1 class="page-title">Корзина</h1>
+        <div class="breadcrumb"><a href="index.html">Главная</a> / <span>Корзина</span></div>
+      </div>
+
+      <!-- EMPTY STATE -->
+      <div class="cart-empty" id="cartEmpty" style="display:none">
+        <div class="empty-icon">🛒</div>
+        <h2>Корзина пуста</h2>
+        <p>Добавьте товары из каталога</p>
+        <a href="catalog.html" class="btn btn--primary btn--lg">Перейти в каталог</a>
+      </div>
+
+      <!-- CART CONTENT -->
+      <div class="cart-layout" id="cartLayout" style="display:none">
+        <div class="cart-items">
+          <div class="cart-items__header">
+            <span>Товар</span>
+            <span>Цена</span>
+            <span>Кол-во</span>
+            <span>Итого</span>
+            <span></span>
+          </div>
+          <div id="cartItemsList"></div>
+          <div class="cart-actions-row">
+            <button class="btn btn--ghost btn--sm" id="clearCartBtn">Очистить корзину</button>
+            <a href="catalog.html" class="btn-text">← Продолжить покупки</a>
+          </div>
+        </div>
+
+        <!-- SUMMARY -->
+        <div class="cart-summary">
+          <h3 class="cart-summary__title">Итого</h3>
+          <div class="cart-summary__row">
+            <span>Товары (<span id="summaryCount">0</span>)</span>
+            <span id="summarySubtotal">0 ⃀</span>
+          </div>
+          <div class="cart-summary__row cart-summary__row--total">
+            <span>К оплате</span>
+            <span id="summaryTotal">0 ⃀</span>
+          </div>
+          <a href="checkout.html" class="btn btn--primary btn--lg w-full">
+            Оформить заказ →
+          </a>
+          <div class="cart-secure">
+            <span>🔒 Безопасная оплата</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__bottom"><div class="container"><span>© 2025 Hoji.tech</span></div></div>
+  </footer>
+
+  <div class="toast-container" id="toastContainer"></div>
+  <div class="nav-overlay" id="navOverlay"></div>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

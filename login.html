@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Вход и регистрация — Hoji.tech</title>
+  <meta name="description" content="Войдите или зарегистрируйтесь в Hoji.tech">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="index.html" class="header__logo"><span class="logo-icon">⟨/⟩</span><span class="logo-text">Hoji<span class="accent">.Tech</span></span></a>
+      <nav class="header__nav" id="mainNav">
+        <a href="catalog.html" class="nav-link">Каталог</a>
+        <a href="about.html" class="nav-link">О нас</a>
+        <a href="contacts.html" class="nav-link">Контакты</a>
+      </nav>
+      <div class="header__actions">
+        <button class="btn-icon theme-toggle" id="themeToggle"><span class="theme-icon">◑</span></button>
+        <a href="cart.html" class="btn-icon cart-btn"><span class="cart-icon">◫</span><span class="cart-badge" id="cartBadge" style="display:none">0</span></a>
+        <button class="btn-icon burger" id="burger"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main class="auth-page">
+    <div class="auth-container">
+      <div class="auth-card">
+        <div class="auth-logo">
+          <span class="logo-icon">⟨/⟩</span>
+          <span class="logo-text">Hoji<span class="accent">.Tech</span></span>
+        </div>
+
+        <!-- TABS -->
+        <div class="auth-tabs">
+          <button class="auth-tab active" data-tab="login">Вход</button>
+          <button class="auth-tab" data-tab="register">Регистрация</button>
+        </div>
+
+        <!-- LOGIN FORM -->
+        <form class="auth-form active" id="loginForm" novalidate>
+          <div class="form-group">
+            <label class="form-label" for="loginEmail">Email *</label>
+            <input type="email" id="loginEmail" name="email" class="form-input" placeholder="your@email.com" required>
+            <span class="form-error" id="loginEmailError"></span>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="loginPassword">Пароль *</label>
+            <div class="password-wrap">
+              <input type="password" id="loginPassword" name="password" class="form-input" placeholder="••••••••" required minlength="6">
+              <button type="button" class="password-toggle" data-target="loginPassword">👁</button>
+            </div>
+            <span class="form-error" id="loginPasswordError"></span>
+          </div>
+          <button type="submit" class="btn btn--primary btn--lg w-full">Войти</button>
+          <!--<p class="auth-hint">Тестовый аккаунт: <code>admin@hoji.tech</code> / <code>admin123</code></p>-->
+        </form>
+
+        <!-- REGISTER FORM -->
+        <form class="auth-form" id="registerForm" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="regFirstName">Имя *</label>
+              <input type="text" id="regFirstName" name="firstName" class="form-input" placeholder="Иван" required>
+              <span class="form-error" id="regFirstNameError"></span>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="regLastName">Фамилия *</label>
+              <input type="text" id="regLastName" name="lastName" class="form-input" placeholder="Иванов" required>
+              <span class="form-error" id="regLastNameError"></span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="regEmail">Email *</label>
+            <input type="email" id="regEmail" name="email" class="form-input" placeholder="your@email.com" required>
+            <span class="form-error" id="regEmailError"></span>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="regPhone">Телефон</label>
+            <div class="phone-input-wrap">
+              <span class="phone-prefix">🇰🇬 +996</span>
+              <input type="tel" id="regPhone" name="phone" class="form-input phone-input" placeholder="555 000 000" maxlength="9">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="regPassword">Пароль *</label>
+            <div class="password-wrap">
+              <input type="password" id="regPassword" name="password" class="form-input" placeholder="Минимум 6 символов" required minlength="6">
+              <button type="button" class="password-toggle" data-target="regPassword">👁</button>
+            </div>
+            <span class="form-error" id="regPasswordError"></span>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="regPasswordConfirm">Повторите пароль *</label>
+            <div class="password-wrap">
+              <input type="password" id="regPasswordConfirm" name="passwordConfirm" class="form-input" placeholder="••••••••" required>
+              <button type="button" class="password-toggle" data-target="regPasswordConfirm">👁</button>
+            </div>
+            <span class="form-error" id="regPasswordConfirmError"></span>
+          </div>
+          <button type="submit" class="btn btn--primary btn--lg w-full">Зарегистрироваться</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <div class="toast-container" id="toastContainer"></div>
+  <div class="nav-overlay" id="navOverlay"></div>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

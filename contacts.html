@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Контакты — Hoji.tech</title>
+  <meta name="description" content="Контакты Hoji.tech. Адрес, телефон, email. г. Бишкек.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Контакты Hoji.tech"
+  }
+  </script>
+</head>
+<body>
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="index.html" class="header__logo"><span class="logo-icon">⟨/⟩</span><span class="logo-text">Hoji<span class="accent">.Tech</span></span></a>
+      <nav class="header__nav" id="mainNav">
+        <a href="catalog.html" class="nav-link">Каталог</a>
+        <a href="about.html" class="nav-link">О нас</a>
+        <a href="contacts.html" class="nav-link active">Контакты</a>
+      </nav>
+      <div class="header__actions">
+        <button class="btn-icon theme-toggle" id="themeToggle"><span class="theme-icon">◑</span></button>
+        <a href="cart.html" class="btn-icon cart-btn"><span class="cart-icon">◫</span><span class="cart-badge" id="cartBadge" style="display:none">0</span></a>
+        <a href="login.html" class="btn-icon" id="authBtn"><span>◎</span></a>
+        <button class="btn-icon burger" id="burger"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <div class="breadcrumb"><a href="index.html">Главная</a> / <span>Контакты</span></div>
+        <h1 class="page-title">Контакты</h1>
+        <p class="page-subtitle">Будем рады помочь вам выбрать технику</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container contacts-layout">
+        <!-- CONTACT INFO -->
+        <div class="contacts-info">
+          <div class="contact-card">
+            <div class="contact-card__icon">📍</div>
+            <div>
+              <h3>Адрес</h3>
+              <p>44 улица А.Масалиева, Ош<br>1-этаж, Торговый центр Корона</p>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-card__icon">📞</div>
+            <div>
+              <h3>Телефон</h3>
+              <a href="tel:+996553181900">+996 553 181 900</a><br>
+              <a href="tel:+996556170381">+996 556 170 381</a>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-card__icon">✉</div>
+            <div>
+              <h3>Email</h3>
+              <a href="mailto:info@hoji.tech">info@hoji.tech</a>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-card__icon">🕐</div>
+            <div>
+              <h3>Режим работы</h3>
+              <p>Пн–Пт: 9:00 – 20:00<br>Сб: 10:00 – 17:00<br>Вс: выходной</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- CONTACT FORM -->
+        <div class="contact-form-wrap">
+          <h2>Напишите нам</h2>
+          <form class="contact-form" id="contactForm" name="contact" method="POST" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="contactName">Имя *</label>
+                <input type="text" id="contactName" name="name" class="form-input" placeholder="Ваше имя" required>
+                <span class="form-error" id="contactNameError"></span>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="contactPhone">Телефон *</label>
+                <div class="phone-input-wrap">
+                  <span class="phone-prefix">🇰🇬 +996</span>
+                  <input type="tel" id="contactPhone" name="phone" class="form-input phone-input" placeholder="555 000 000" required maxlength="9">
+                </div>
+                <span class="form-error" id="contactPhoneError"></span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="contactEmail">Email</label>
+              <input type="email" id="contactEmail" name="email" class="form-input" placeholder="your@email.com">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="contactSubject">Тема</label>
+              <select id="contactSubject" name="subject" class="form-input">
+                <option value="">Выберите тему</option>
+                <option value="order">Вопрос по заказу</option>
+                <option value="product">Вопрос по товару</option>
+                <option value="service">Сервис и ремонт</option>
+                <option value="other">Другое</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="contactMessage">Сообщение *</label>
+              <textarea id="contactMessage" name="message" class="form-input form-textarea" placeholder="Ваше сообщение..." rows="4" required></textarea>
+              <span class="form-error" id="contactMessageError"></span>
+            </div>
+            <button type="submit" class="btn btn--primary btn--lg">Отправить сообщение</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- MAP PLACEHOLDER -->
+    <section class="section section--no-pad">
+      <div class="map-placeholder">
+        <div class="map-placeholder__content">
+          <span class="map-icon">📍</span>
+          <p>1-этаж, Торговый центр Корона, 44 улица А.Масалиева, Ош</p>
+          <a href="https://maps.google.com/?q= 1-этаж, Торговый центр Корона, 44 улица А.Масалиева, Ош" target="_blank" rel="noopener" class="btn btn--primary btn--sm">Открыть в Google Maps</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="index.html" class="header__logo"><span class="logo-icon">⟨/⟩</span><span class="logo-text">Hoji<span class="accent">.Tech</span></span></a>
+      </div>
+      <div class="footer__links">
+        <div class="footer__col">
+          <h4>Магазин</h4>
+          <a href="catalog.html">Каталог</a>
+          <a href="about.html">О нас</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom"><div class="container"><span>© 2025 Hoji.tech</span></div></div>
+  </footer>
+  <div class="toast-container" id="toastContainer"></div>
+  <div class="nav-overlay" id="navOverlay"></div>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

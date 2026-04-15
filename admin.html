@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Админ-панель — Hoji.tech</title>
+  <meta name="robots" content="noindex,nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="index.html" class="header__logo"><span class="logo-icon">⟨/⟩</span><span class="logo-text">Hoji<span class="accent">.Tech</span></span></a>
+      <div class="header__actions">
+        <button class="btn-icon theme-toggle" id="themeToggle"><span class="theme-icon">◑</span></button>
+        <a href="profile.html" class="btn btn--ghost btn--sm">Профиль</a>
+        <button class="btn btn--ghost btn--sm" id="adminLogout">Выйти</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="admin-page">
+    <div class="container">
+      <div class="admin-header">
+        <h1>Панель управления</h1>
+        <div class="admin-stats" id="adminStats">
+          <div class="admin-stat">
+            <span class="admin-stat__num" id="statProducts">0</span>
+            <span class="admin-stat__label">Товаров</span>
+          </div>
+          <div class="admin-stat">
+            <span class="admin-stat__num" id="statOrders">0</span>
+            <span class="admin-stat__label">Заказов</span>
+          </div>
+          <div class="admin-stat">
+            <span class="admin-stat__num" id="statUsers">0</span>
+            <span class="admin-stat__label">Пользователей</span>
+          </div>
+          <div class="admin-stat">
+            <span class="admin-stat__num" id="statRevenue">0 ⃀</span>
+            <span class="admin-stat__label">Выручка</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ADMIN TABS -->
+      <div class="admin-tabs">
+        <button class="admin-tab active" data-tab="products">Товары</button>
+        <button class="admin-tab" data-tab="orders">Заказы</button>
+      </div>
+
+      <!-- PRODUCTS TAB -->
+      <div class="admin-content active" id="adminTab-products">
+        <div class="admin-toolbar">
+          <h2>Управление товарами</h2>
+          <button class="btn btn--primary" id="addProductBtn">+ Добавить товар</button>
+        </div>
+
+        <div class="admin-table-wrap">
+          <table class="admin-table" id="productsTable">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Фото</th>
+                <th>Название</th>
+                <th>Тип</th>
+                <th>Состояние</th>
+                <th>Цена</th>
+                <th>В наличии</th>
+                <th>Действия</th>
+              </tr>
+            </thead>
+            <tbody id="productsTableBody"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- ORDERS TAB -->
+      <div class="admin-content" id="adminTab-orders">
+        <div class="admin-toolbar">
+          <h2>Управление заказами</h2>
+        </div>
+
+        <div class="admin-table-wrap">
+          <table class="admin-table" id="ordersTable">
+            <thead>
+              <tr>
+                <th>№ заказа</th>
+                <th>Дата</th>
+                <th>Покупатель</th>
+                <th>Телефон</th>
+                <th>Сумма</th>
+                <th>Доставка</th>
+                <th>Статус</th>
+                <th>Действия</th>
+              </tr>
+            </thead>
+            <tbody id="ordersTableBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- PRODUCT MODAL -->
+  <div class="modal" id="productModal" style="display:none">
+    <div class="modal__backdrop" id="productModalBackdrop"></div>
+    <div class="modal__content">
+      <div class="modal__header">
+        <h3 id="productModalTitle">Добавить товар</h3>
+        <button class="modal-close" id="productModalClose">✕</button>
+      </div>
+      <form class="admin-form" id="productForm" novalidate>
+        <input type="hidden" id="productId">
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Название *</label>
+            <input type="text" id="pName" name="name" class="form-input" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Бренд *</label>
+            <input type="text" id="pBrand" name="brand" class="form-input" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Тип *</label>
+            <select id="pType" name="type" class="form-input">
+              <option value="pc">Настольный ПК</option>
+              <option value="laptop">Ноутбук</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Состояние *</label>
+            <select id="pCondition" name="condition" class="form-input">
+              <option value="new">Новый</option>
+              <option value="used">Б/У</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Цена, ⃀ *</label>
+            <input type="number" id="pPrice" name="price" class="form-input" required min="0">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Старая цена, ⃀</label>
+            <input type="number" id="pOldPrice" name="oldPrice" class="form-input" min="0">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Популярность (0–100)</label>
+            <input type="number" id="pPopularity" name="popularity" class="form-input" min="0" max="100" value="50">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Гарантия</label>
+            <input type="text" id="pWarranty" name="warranty" class="form-input" placeholder="12 месяцев">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Описание</label>
+          <textarea id="pDescription" name="description" class="form-input form-textarea" rows="3"></textarea>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Характеристики (JSON)</label>
+          <textarea id="pSpecs" name="specs" class="form-input form-textarea form-textarea--mono" rows="5" placeholder='{"CPU": "Intel Core i5", "RAM": "16 GB"}'></textarea>
+          <span class="form-hint">Формат: {"Ключ": "Значение"}</span>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Изображения (URLs через запятую)</label>
+          <textarea id="pImages" name="images" class="form-input form-textarea" rows="3" placeholder="https://example.com/img1.jpg, https://example.com/img2.jpg"></textarea>
+        </div>
+        <div class="form-group">
+          <label class="form-checkbox-label">
+            <input type="checkbox" id="pInStock" name="inStock" checked>
+            <span>В наличии</span>
+          </label>
+        </div>
+        <div class="form-actions">
+          <button type="button" class="btn btn--ghost" id="cancelProductBtn">Отмена</button>
+          <button type="submit" class="btn btn--primary">Сохранить</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ORDER STATUS MODAL -->
+  <div class="modal" id="orderStatusModal" style="display:none">
+    <div class="modal__backdrop" id="orderStatusBackdrop"></div>
+    <div class="modal__content modal__content--sm">
+      <div class="modal__header">
+        <h3>Изменить статус заказа</h3>
+        <button class="modal-close" id="orderStatusClose">✕</button>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Статус заказа <span id="editOrderNum"></span></label>
+        <select id="orderStatusSelect" class="form-input">
+          <option value="pending">Ожидает подтверждения</option>
+          <option value="confirmed">Подтверждён</option>
+          <option value="processing">В обработке</option>
+          <option value="shipped">Отправлен</option>
+          <option value="delivered">Доставлен</option>
+          <option value="cancelled">Отменён</option>
+        </select>
+      </div>
+      <div class="form-actions">
+        <button class="btn btn--ghost" id="cancelOrderStatus">Отмена</button>
+        <button class="btn btn--primary" id="saveOrderStatus">Сохранить</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast-container" id="toastContainer"></div>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
